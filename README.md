@@ -5,29 +5,29 @@ Hubot Script for providing deploy ability with custom scripts
 
 Adds a new command to hubot:
 Currently only supporting deploying to one target (prod)
-```(name of hubot) deploy tag <tag to deploy> (to) <target>```
+```(name of hubot) deploy <tag to deploy> (to) <target>```
 ```(name of hubot) deploy <branch> (to) <target>```
-```(name of hubot) deploy``` defaults to ```(name of hubot) deploy master prod ```
+```(name of hubot) deploy``` defaults to ```(name of hubot) deploy production```
 
 Config
 ======
 
-Set the ENV Vars:
-
-HUBOT_DEPLOY_CUSTOM_DIR = to which dir to deploy
-
 renaming deploy.conf.example -> deploy.conf
-
-
 
 Workflow for working with this addon
 ====================================
 
 1. commit all things
 2. (test it)
-3. Increase Version and commit a new tag with ```npm version patch```
-4. push to server ```git push origin [tagname]```
-5. chat with hubot ```hubot deploy <num>```
+3. Increase Version and commit a new tag
+4. push to server ```git push origin```
+5. chat with hubot ```hubot deploy <command>```
+
+
+Upgrading
+====================================
+
+Save your deploy.conf to another location than node_modules
 
 
 
