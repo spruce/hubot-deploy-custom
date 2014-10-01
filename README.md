@@ -16,6 +16,9 @@ Set the ENV Vars:
 
 HUBOT_DEPLOY_CUSTOM_DIR = to which dir to deploy
 
+renaming deploy.conf.example -> deploy.conf
+
+
 
 Workflow for working with this addon
 ====================================

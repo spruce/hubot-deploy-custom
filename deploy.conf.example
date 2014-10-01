@@ -1,0 +1,7 @@
+[production]
+user deployer
+host server
+port (PORT)
+repo repo url
+path /var/www/deploy
+post-deploy ./restart

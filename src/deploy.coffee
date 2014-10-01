@@ -38,7 +38,7 @@ module.exports = (robot) ->
 
     # this is custom
     # will be read from .deploy.conf
-    exec __dirname + "/bin/deploy -c ../deploy.conf production master", (err, stdout, stderr) ->
+    exec __dirname + "/../bin/deploy -c ../deploy.conf production master", (err, stdout, stderr) ->
       if err
         msg.send "Error: " + err
       if stderr
