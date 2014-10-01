@@ -4,15 +4,17 @@ hubot-deploy-custom
 Hubot Script for providing deploy ability with custom scripts
 
 Adds a new command to hubot:
-```(name of hubot) deploy tag <tag to deploy>```
-```(name of hubot) deploy <branch>```
+Currently only supporting deploying to one target (prod)
+```(name of hubot) deploy tag <tag to deploy> (to) <target>```
+```(name of hubot) deploy <branch> (to) <target>```
+```(name of hubot) deploy``` defaults to ```(name of hubot) deploy master prod ```
 
 Config
 ======
 
 Set the ENV Vars:
 
-HUBOT_DEPLOY_CUSTOM_DIR
+HUBOT_DEPLOY_CUSTOM_DIR = to which dir to deploy
 
 
 Workflow for working with this addon
@@ -23,6 +25,19 @@ Workflow for working with this addon
 3. Increase Version and commit a new tag with ```npm version patch```
 4. push to server ```git push origin [tagname]```
 5. chat with hubot ```hubot deploy <num>```
+
+
+
+Work based on following people
+==============================
+
+
+Uses nice deploy script from visionmedia
+https://github.com/visionmedia/deploy
+
+Matt Pegler for the inspiration
+http://www.pegler.co/2012/03/django-deployment.html
+
 
 
 ## Directory Structure

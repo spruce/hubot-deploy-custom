@@ -1,0 +1,130 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.0.0
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add spec="." args=[".",null]
+8 verbose parsed spec { raw: '.',
+8 verbose parsed spec   scope: null,
+8 verbose parsed spec   name: null,
+8 verbose parsed spec   rawSpec: '.',
+8 verbose parsed spec   spec: '/Users/spruce/Sites/hubot-deploy-custom',
+8 verbose parsed spec   type: 'local' }
+9 verbose cache add local package /Users/spruce/Sites/hubot-deploy-custom
+10 silly lockFile 3a52ce78- .
+11 verbose lock . /Users/spruce/.npm/3a52ce78-.lock
+12 verbose tar pack [ '/Users/spruce/.npm/hubot-example/0.0.1/package.tgz', '.' ]
+13 verbose tarball /Users/spruce/.npm/hubot-example/0.0.1/package.tgz
+14 verbose folder .
+15 info prepublish hubot-example@0.0.1
+16 silly lockFile 1f1177db-tar tar://.
+17 verbose lock tar://. /Users/spruce/.npm/1f1177db-tar.lock
+18 silly lockFile ffbb5c1c--hubot-example-0-0-1-package-tgz tar:///Users/spruce/.npm/hubot-example/0.0.1/package.tgz
+19 verbose lock tar:///Users/spruce/.npm/hubot-example/0.0.1/package.tgz /Users/spruce/.npm/ffbb5c1c--hubot-example-0-0-1-package-tgz.lock
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile 1f1177db-tar tar://.
+22 silly lockFile ffbb5c1c--hubot-example-0-0-1-package-tgz tar:///Users/spruce/.npm/hubot-example/0.0.1/package.tgz
+23 silly lockFile ffbb5c1c--hubot-example-0-0-1-package-tgz tar:///Users/spruce/.npm/hubot-example/0.0.1/package.tgz
+24 silly lockFile eeab23a0--npm-hubot-example-0-0-1-package /Users/spruce/.npm/hubot-example/0.0.1/package
+25 verbose lock /Users/spruce/.npm/hubot-example/0.0.1/package /Users/spruce/.npm/eeab23a0--npm-hubot-example-0-0-1-package.lock
+26 silly lockFile eeab23a0--npm-hubot-example-0-0-1-package /Users/spruce/.npm/hubot-example/0.0.1/package
+27 silly lockFile eeab23a0--npm-hubot-example-0-0-1-package /Users/spruce/.npm/hubot-example/0.0.1/package
+28 silly lockFile 3a52ce78- .
+29 silly lockFile 3a52ce78- .
+30 silly publish { name: 'hubot-example',
+30 silly publish   description: 'An example script package for Hubot',
+30 silly publish   version: '0.0.1',
+30 silly publish   author: { name: 'Felix Fichte', email: 'dev@spruce.de' },
+30 silly publish   license: 'MIT',
+30 silly publish   keywords: [ 'hubot', 'hubot-scripts' ],
+30 silly publish   repository:
+30 silly publish    { type: 'git',
+30 silly publish      url: 'git://github.com/spruce/hubot-deploy-custom.git' },
+30 silly publish   bugs: { url: 'https://github.com/spruce/hubot-deploy-custom/issues' },
+30 silly publish   dependencies: { 'coffee-script': '~1.6' },
+30 silly publish   devDependencies: { mocha: '*', chai: '*', 'sinon-chai': '*', sinon: '*' },
+30 silly publish   main: 'index.coffee',
+30 silly publish   scripts: { test: 'script/test' },
+30 silly publish   readme: 'hubot-deploy-custom\n===================\n\nHubot Script for providing deploy ability with custom scripts\n\nAdds a new command to hubot:\nCurrently only supporting deploying to one target (prod)\n```(name of hubot) deploy tag <tag to deploy> (to) <target>```\n```(name of hubot) deploy <branch> (to) <target>```\n```(name of hubot) deploy``` defaults to ```(name of hubot) deploy master prod ```\n\nConfig\n======\n\nSet the ENV Vars:\n\nHUBOT_DEPLOY_CUSTOM_DIR = to which dir to deploy\n\n\nWorkflow for working with this addon\n====================================\n\n1. commit all things\n2. (test it)\n3. Increase Version and commit a new tag with ```npm version patch```\n4. push to server ```git push origin [tagname]```\n5. chat with hubot ```hubot deploy <num>```\n\n\n\nWork based on following people\n==============================\n\n\nUses nice deploy script from visionmedia\nhttps://github.com/visionmedia/deploy\n\nMatt Pegler for the inspiration\nhttp://www.pegler.co/2012/03/django-deployment.html\n\n\n\n## Directory Structure\n\nUsing the common directory structure for hubot script packages it will be easy\nto manage and allow others to easily contribute to your package.\n\n### script\n\nThis directory is home to a couple of development scripts; `bootstrap` and `test`\nthey\'re used to bootstrap the development environment and run tests\nrespectively.\n\n### src\n\nThis directory is home to the actual hubot scripts in the package. Your\n`index.coffee` entry point will load the scripts from this directory.\n\n### test\n\nThis directory is home to any tests you write for your scripts. This example\npackage uses Mocha, Chai and Sinon to manage writing tests.\n\n## Advantages of Building a Package\n\nSome of the advantages of building an npm package for your hubot script(s) are:\n\n* You don\'t need to rely on when hubot-scripts package is released.\n* You can specify dependencies in the `package.json` rather than have users\n  manually specify them\n* You can easily add tests using your favourite frameworks and libraries\n\n',
+30 silly publish   readmeFilename: 'README.md',
+30 silly publish   gitHead: 'ed024eb8fba1c6028e0eeee86909e3ae20f4b5b6',
+30 silly publish   homepage: 'https://github.com/spruce/hubot-deploy-custom',
+30 silly publish   _id: 'hubot-example@0.0.1',
+30 silly publish   _shasum: '232877bcbb7158fe30ed6fa9aa80eb22372af983',
+30 silly publish   _from: '.' }
+31 verbose mapToRegistry name hubot-example
+32 verbose mapToRegistry uri https://registry.npmjs.org/hubot-example
+33 verbose publish registryBase https://registry.npmjs.org/
+34 verbose request on initialization, where is /hubot-example
+35 verbose request after pass 1, where is /hubot-example
+36 verbose request url raw /hubot-example
+37 verbose request resolving registry [ 'https://registry.npmjs.org/', './hubot-example' ]
+38 verbose request after pass 2, where is https://registry.npmjs.org/hubot-example
+39 verbose request sending authorization for write operation
+40 info attempt registry request try #1 at 16:01:15
+41 verbose request id 4057e1a59bbaa3d5
+42 http request PUT https://registry.npmjs.org/hubot-example
+43 http 403 https://registry.npmjs.org/hubot-example
+44 verbose headers { date: 'Wed, 01 Oct 2014 14:01:15 GMT',
+44 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+44 verbose headers   'content-type': 'application/json',
+44 verbose headers   'cache-control': 'max-age=60',
+44 verbose headers   'content-length': '4635',
+44 verbose headers   'accept-ranges': 'bytes',
+44 verbose headers   via: '1.1 varnish',
+44 verbose headers   'x-served-by': 'cache-fra1225-FRA',
+44 verbose headers   'x-cache': 'MISS',
+44 verbose headers   'x-cache-hits': '0',
+44 verbose headers   'x-timer': 'S1412172074.675825,VS0,VE863',
+44 verbose headers   'keep-alive': 'timeout=10, max=50',
+44 verbose headers   connection: 'Keep-Alive' }
+45 error publish Failed PUT 403
+46 verbose stack Error: forbidden user: spruce not authorized to modify hubot-example
+46 verbose stack Changed: description "An example script pacakage for Hubot" -> "An example script package for Hubot"
+46 verbose stack Changed: dist-tags.latest "1.0.0" -> "0.0.1"
+46 verbose stack Added: versions.0.0.1
+46 verbose stack Changed: readme "# Hubot Example\u000a\u000aAn example script package for Hubot\u000a\u000a[![Build Status](https://travis-ci.org/hubot-scripts/hubot-example.png)](https://travis-ci.org/hubot-scripts/hubot-example)\u000a\u000a## Directory Structure\u000a\u000aUsing the common directory structure for hubot script packages it will be easy\u000ato manage and allow others to easily contribute to your package.\u000a\u000a### script\u000a\u000aThis directory is home to a couple of development scripts; `bootstrap` and `test`\u000athey're used to bootstrap the development environment and run tests\u000arespectively.\u000a\u000a### src\u000a\u000aThis directory is home to the actual hubot scripts in the package. Your\u000a`index.coffee` entry point will load the scripts from this directory.\u000a\u000a### test\u000a\u000aThis directory is home to any tests you write for your scripts. This example\u000apackage uses Mocha, Chai and Sinon to manage writing tests.\u000a\u000a## Advantages of Building a Package\u000a\u000aSome of the advantages of building an npm package for your hubot script(s) are:\u000a\u000a* You don't need to rely on when hubot-scripts package is released.\u000a* You can specify dependencies in the `package.json` rather than have users\u000a  manually specify them\u000a* You can easily add tests using your favourite frameworks and libraries\u000a" -> "hubot-deploy-custom\u000a===================\u000a\u000aHubot Script for providing deploy ability with custom scripts\u000a\u000aAdds a new command to hubot:\u000aCurrently only supporting deploying to one target (prod)\u000a```(name of hubot) deploy tag <tag to deploy> (to) <target>```\u000a```(name of hubot) deploy <branch> (to) <target>```\u000a```(name of hubot) deploy``` defaults to ```(name of hubot) deploy master prod ```\u000a\u000aConfig\u000a======\u000a\u000aSet the ENV Vars:\u000a\u000aHUBOT_DEPLOY_CUSTOM_DIR = to which dir to deploy\u000a\u000a\u000aWorkflow for working with this addon\u000a====================================\u000a\u000a1. commit all things\u000a2. (test it)\u000a3. Increase Version and commit a new tag with ```npm version patch```\u000a4. push to server ```git push origin [tagname]```\u000a5. chat with hubot ```hubot deploy <num>```\u000a\u000a\u000a\u000aWork based on following people\u000a==============================\u000a\u000a\u000aUses nice deploy script from visionmedia\u000ahttps://github.com/visionmedia/deploy\u000a\u000aMatt Pegler for the inspiration\u000ahttp://www.pegler.co/2012/03/django-deployment.html\u000a\u000a\u000a\u000a## Directory Structure\u000a\u000aUsing the common directory structure for hubot script packages it will be easy\u000ato manage and allow others to easily contribute to your package.\u000a\u000a### script\u000a\u000aThis directory is home to a couple of development scripts; `bootstrap` and `test`\u000athey're used to bootstrap the development environment and run tests\u000arespectively.\u000a\u000a### src\u000a\u000aThis directory is home to the actual hubot scripts in the package. Your\u000a`index.coffee` entry point will load the scripts from this directory.\u000a\u000a### test\u000a\u000aThis directory is home to any tests you write for your scripts. This example\u000apackage uses Mocha, Chai and Sinon to manage writing tests.\u000a\u000a## Advantages of Building a Package\u000a\u000aSome of the advantages of building an npm package for your hubot script(s) are:\u000a\u000a* You don't need to rely on when hubot-scripts package is released.\u000a* You can specify dependencies in the `package.json` rather than have users\u000a  manually specify them\u000a* You can easily add tests using your favourite frameworks and libraries\u000a\u000a"
+46 verbose stack Changed: time.modified "2013-09-05T22:52:00.296Z" -> "2014-10-01T14:01:29.994Z"
+46 verbose stack Added: time.0.0.1
+46 verbose stack Changed: author.name "Tom Bell" -> "Felix Fichte"
+46 verbose stack Changed: author.email "tomb@tomb.io" -> "dev@spruce.de"
+46 verbose stack Changed: repository.url "git://github.com/hubot-scripts/hubot-example.git" -> "git://github.com/spruce/hubot-deploy-custom.git"
+46 verbose stack Changed: bugs.url "https://github.com/hubot-scripts/hubot-example/issues" -> "https://github.com/spruce/hubot-deploy-custom/issues"
+46 verbose stack Added: homepage
+46 verbose stack Added: _attachments: hubot-example
+46 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:261:14)
+46 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:198:65)
+46 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
+46 verbose stack     at Request.emit (events.js:98:17)
+46 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+46 verbose stack     at Request.emit (events.js:117:20)
+46 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+46 verbose stack     at IncomingMessage.emit (events.js:117:20)
+46 verbose stack     at _stream_readable.js:943:16
+46 verbose stack     at process._tickCallback (node.js:419:13)
+47 verbose statusCode 403
+48 verbose pkgid hubot-example
+49 verbose cwd /Users/spruce/Sites/hubot-deploy-custom
+50 error Darwin 13.3.0
+51 error argv "node" "/usr/local/bin/npm" "publish"
+52 error node v0.10.32
+53 error npm  v2.0.0
+54 error code E403
+55 error forbidden user: spruce not authorized to modify hubot-example
+55 error Changed: description "An example script pacakage for Hubot" -> "An example script package for Hubot"
+55 error Changed: dist-tags.latest "1.0.0" -> "0.0.1"
+55 error Added: versions.0.0.1
+55 error Changed: readme "# Hubot Example\u000a\u000aAn example script package for Hubot\u000a\u000a[![Build Status](https://travis-ci.org/hubot-scripts/hubot-example.png)](https://travis-ci.org/hubot-scripts/hubot-example)\u000a\u000a## Directory Structure\u000a\u000aUsing the common directory structure for hubot script packages it will be easy\u000ato manage and allow others to easily contribute to your package.\u000a\u000a### script\u000a\u000aThis directory is home to a couple of development scripts; `bootstrap` and `test`\u000athey're used to bootstrap the development environment and run tests\u000arespectively.\u000a\u000a### src\u000a\u000aThis directory is home to the actual hubot scripts in the package. Your\u000a`index.coffee` entry point will load the scripts from this directory.\u000a\u000a### test\u000a\u000aThis directory is home to any tests you write for your scripts. This example\u000apackage uses Mocha, Chai and Sinon to manage writing tests.\u000a\u000a## Advantages of Building a Package\u000a\u000aSome of the advantages of building an npm package for your hubot script(s) are:\u000a\u000a* You don't need to rely on when hubot-scripts package is released.\u000a* You can specify dependencies in the `package.json` rather than have users\u000a  manually specify them\u000a* You can easily add tests using your favourite frameworks and libraries\u000a" -> "hubot-deploy-custom\u000a===================\u000a\u000aHubot Script for providing deploy ability with custom scripts\u000a\u000aAdds a new command to hubot:\u000aCurrently only supporting deploying to one target (prod)\u000a```(name of hubot) deploy tag <tag to deploy> (to) <target>```\u000a```(name of hubot) deploy <branch> (to) <target>```\u000a```(name of hubot) deploy``` defaults to ```(name of hubot) deploy master prod ```\u000a\u000aConfig\u000a======\u000a\u000aSet the ENV Vars:\u000a\u000aHUBOT_DEPLOY_CUSTOM_DIR = to which dir to deploy\u000a\u000a\u000aWorkflow for working with this addon\u000a====================================\u000a\u000a1. commit all things\u000a2. (test it)\u000a3. Increase Version and commit a new tag with ```npm version patch```\u000a4. push to server ```git push origin [tagname]```\u000a5. chat with hubot ```hubot deploy <num>```\u000a\u000a\u000a\u000aWork based on following people\u000a==============================\u000a\u000a\u000aUses nice deploy script from visionmedia\u000ahttps://github.com/visionmedia/deploy\u000a\u000aMatt Pegler for the inspiration\u000ahttp://www.pegler.co/2012/03/django-deployment.html\u000a\u000a\u000a\u000a## Directory Structure\u000a\u000aUsing the common directory structure for hubot script packages it will be easy\u000ato manage and allow others to easily contribute to your package.\u000a\u000a### script\u000a\u000aThis directory is home to a couple of development scripts; `bootstrap` and `test`\u000athey're used to bootstrap the development environment and run tests\u000arespectively.\u000a\u000a### src\u000a\u000aThis directory is home to the actual hubot scripts in the package. Your\u000a`index.coffee` entry point will load the scripts from this directory.\u000a\u000a### test\u000a\u000aThis directory is home to any tests you write for your scripts. This example\u000apackage uses Mocha, Chai and Sinon to manage writing tests.\u000a\u000a## Advantages of Building a Package\u000a\u000aSome of the advantages of building an npm package for your hubot script(s) are:\u000a\u000a* You don't need to rely on when hubot-scripts package is released.\u000a* You can specify dependencies in the `package.json` rather than have users\u000a  manually specify them\u000a* You can easily add tests using your favourite frameworks and libraries\u000a\u000a"
+55 error Changed: time.modified "2013-09-05T22:52:00.296Z" -> "2014-10-01T14:01:29.994Z"
+55 error Added: time.0.0.1
+55 error Changed: author.name "Tom Bell" -> "Felix Fichte"
+55 error Changed: author.email "tomb@tomb.io" -> "dev@spruce.de"
+55 error Changed: repository.url "git://github.com/hubot-scripts/hubot-example.git" -> "git://github.com/spruce/hubot-deploy-custom.git"
+55 error Changed: bugs.url "https://github.com/hubot-scripts/hubot-example/issues" -> "https://github.com/spruce/hubot-deploy-custom/issues"
+55 error Added: homepage
+55 error Added: _attachments: hubot-example
+56 error If you need help, you may report this error at:
+56 error     <http://github.com/npm/npm/issues>
+57 verbose exit [ 1, true ]

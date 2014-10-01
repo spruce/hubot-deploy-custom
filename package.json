@@ -1,8 +1,8 @@
 {
-  "name": "hubot-example",
+  "name": "hubot-deploy-custom",
   "description": "An example script package for Hubot",
-  "version": "1.0.0",
-  "author": "Tom Bell <tomb@tomb.io>",
+  "version": "0.0.1",
+  "author": "Felix Fichte <dev@spruce.de>",
   "license": "MIT",
 
   "keywords": [
@@ -12,11 +12,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-example.git"
+    "url": "git://github.com/spruce/hubot-deploy-custom.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-example/issues"
+    "url": "https://github.com/spruce/hubot-deploy-custom/issues"
   },
 
   "dependencies": {
