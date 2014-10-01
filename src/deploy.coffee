@@ -29,12 +29,12 @@ module.exports = (robot) ->
   # match[0]: everything,             match[1]: " tag" or empty,
   # match[2]: tag or branch or empty, match[3]: target or empty,
   branchOrTag = "master"
-  if match[2] != undefined
-    branchOrTag = match[2]
+  if msg.match[2] != undefined
+    branchOrTag = msg.match[2]
   target = "production"
-  if match[3] != undefined
+  if msg.match[3] != undefined
     msg.send "currently only deploying to production"
-    #target = match[3]
+    #target = msg.match[3]
 
   # this is custom
   # will be read from .deploy.conf
@@ -47,7 +47,7 @@ module.exports = (robot) ->
     msg.send "out:  " + stdout
 
 
-  if match[1] == " tag"
+  if msg.match[1] == " tag"
     # we have a tag
     # TODO check if tag exists
     msg.send "Should deploy from tag msg.match[1] to prod"
