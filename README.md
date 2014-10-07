@@ -5,9 +5,9 @@ Hubot Script for providing deploy ability with custom scripts
 
 Adds a new command to hubot:
 Currently only supporting deploying to one target (prod)
-```(name of hubot) deploy <tag to deploy> (to) <target>```
-```(name of hubot) deploy <branch> (to) <target>```
-```(name of hubot) deploy``` defaults to ```(name of hubot) deploy production```
+```(name of hubot) deploy <target> (from) <ref to deploy>```
+```(name of hubot) deploy <target>``` makes the default action defined in deploy.conf
+```(name of hubot) deploy``` defaults to ```(name of hubot) deploy stage```
 
 Config
 ======
@@ -21,7 +21,7 @@ Workflow for working with this addon
 2. (test it)
 3. Increase Version and commit a new tag
 4. push to server ```git push origin```
-5. chat with hubot ```hubot deploy <command>```
+5. chat with hubot ```hubot deploy <target>```
 
 
 Upgrading

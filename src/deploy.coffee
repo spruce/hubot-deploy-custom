@@ -10,7 +10,7 @@
 #
 #
 # Commands:
-#   deploy <tag to deploy> (to) <target>
+#   deploy <target> <ref>
 #   deploy <branch> (to) <target>
 #   deploy
 #
@@ -25,17 +25,20 @@
 module.exports = (robot) ->
 
 
-  robot.respond /deploy(?:( tag)? (\S*)(?: to)?(\s\S*)?)?/i, (msg) ->
+  robot.respond /deploy (\S*)(?: from)?(?:( tag)? (\S*)?)?/i, (msg) ->
     # match[0]: everything,             match[1]: " tag" or empty,
-    # match[2]: tag or branch or empty, match[3]: target or empty,
-    branchOrTag = ""
+    # match[2]: target or empty         match[3]: ref or empty
+    
+    target = "stage"
     if msg.match[2] != undefined
-      branchOrTag = " " + msg.match[2]
-    target = "production"
-    if msg.match[3] != undefined
-      target = msg.match[3]
+      target = msg.match[2]
 
-    exec __dirname + "/../bin/deploy -c " + __dirname + "/../deploy.conf " + target + branchOrTag, (err, stdout, stderr) ->
+    ref = ""
+    if msg.match[3] != undefined
+      ref = " " + msg.match[3]
+    
+
+    exec __dirname + "/../bin/deploy -c " + __dirname + "/../deploy.conf " + target + ref, (err, stdout, stderr) ->
       message = stdout
       if not stdout?
         message +=  "\r\n" + "Error: no stdout something went wrong"
