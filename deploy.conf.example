@@ -5,3 +5,12 @@ port (PORT)
 repo repo url
 path /var/www/deploy
 post-deploy ./restart
+
+
+[stage]
+user deployer
+host stage-server
+port (PORT)
+repo repo url
+path /var/www/deploy-stage
+post-deploy ./restart stage

@@ -25,18 +25,18 @@
 module.exports = (robot) ->
 
 
-  robot.respond /deploy (\S*)(?: from)?(?:( tag)? (\S*)?)?/i, (msg) ->
-    # match[0]: everything,             match[1]: " tag" or empty,
-    # match[2]: target or empty         match[3]: ref or empty
-    
+  robot.respond /deploy(?:\s?(\S+)\s?(\S+)?)?/i, (msg) ->
+    # match[0]: everything,              match[1]: target or empty
+    # match[2]: ref or empty
+
     target = "stage"
-    if msg.match[2] != undefined
-      target = msg.match[2]
+    if msg.match[1] != undefined
+      target = msg.match[1]
 
     ref = ""
-    if msg.match[3] != undefined
-      ref = " " + msg.match[3]
-    
+    if msg.match[2] != undefined
+      ref = " " + msg.match[2]
+
 
     exec __dirname + "/../bin/deploy -c " + __dirname + "/../deploy.conf " + target + ref, (err, stdout, stderr) ->
       message = stdout
@@ -47,6 +47,3 @@ module.exports = (robot) ->
         if stderr
           message +=  "\r\n" + "stderr:  " + stderr
       msg.send message
-
-
-

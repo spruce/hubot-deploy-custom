@@ -5,9 +5,15 @@ Hubot Script for providing deploy ability with custom scripts
 
 Adds a new command to hubot:
 Currently only supporting deploying to one target (prod)
-```(name of hubot) deploy <target> (from) <ref to deploy>```
+```(name of hubot) deploy <target> <ref to deploy>```
 ```(name of hubot) deploy <target>``` makes the default action defined in deploy.conf
 ```(name of hubot) deploy``` defaults to ```(name of hubot) deploy stage```
+
+
+Upgrading
+======
+
+Save your deploy.conf somewhere outside the node_modules folder
 
 Config
 ======
