@@ -6,8 +6,7 @@
 #   "querystring" : ""
 #
 # Configuration:
-#   HUBOT_DEPLOY_CUSTOM_DIR
-#
+#   none
 #
 # Commands:
 #   deploy <target> <ref>
@@ -32,12 +31,15 @@ module.exports = (robot) ->
     target = "stage"
     if msg.match[1] != undefined
       target = msg.match[1]
-
+    firstMessage = "Now deploying " + target
     ref = ""
     if msg.match[2] != undefined
       ref = " " + msg.match[2]
+      firstMessage += " from" + ref
 
 
+    msg.send firstMessage
+    
     exec __dirname + "/../bin/deploy -c " + __dirname + "/../deploy.conf " + target + ref, (err, stdout, stderr) ->
       message = stdout
       if not stdout?
