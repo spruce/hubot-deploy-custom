@@ -14,3 +14,13 @@ port (PORT)
 repo repo url
 path /var/www/deploy-stage
 post-deploy ./restart stage
+ref origin/develop
+
+[website]
+user deployer
+host web-server
+port (PORT)
+repo repo url
+path /var/www/website
+ref origin/master
+deployhook web-repo-name

@@ -18,7 +18,13 @@ Save your deploy.conf somewhere outside the node_modules folder
 Config
 ======
 
-renaming deploy.conf.example -> deploy.conf
+renaming deploy.conf.example -> deploy.conf 
+
+Added a new filed to the config where you can put the repo name from gitlab so it knows which config to use to deploy on commit
+```deployhook web-repo-name``` web-repo-name should be the name of the repositoriy add hubot.url.com/deploy as a push hook on your repo
+
+HUBOT_DEPLOY_CUSTOM_CHANNEL put this into your environment so hubot knows where to post things to
+
 
 Workflow for working with this addon
 ====================================

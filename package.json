@@ -16,7 +16,8 @@
     "url": "https://github.com/spruce/hubot-deploy-custom/issues"
   },
   "dependencies": {
-    "coffee-script": "~1.6"
+    "coffee-script": "~1.6",
+    "properties": "^1.2.1"
   },
   "devDependencies": {
     "mocha": "*",
