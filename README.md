@@ -41,6 +41,9 @@ Upgrading
 
 Save your deploy.conf to another location than node_modules
 
+##From before 0.0.9 to 0.0.9 or after:
+Add ```HUBOT_DEPLOY_CUSTOM_CHANNEL``` to your environment
+
 
 
 Work based on following people
