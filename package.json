@@ -1,7 +1,7 @@
 {
   "name": "hubot-deploy-custom",
   "description": "An example script package for Hubot",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Felix Fichte <dev@spruce.de>",
   "license": "MIT",
   "keywords": [
