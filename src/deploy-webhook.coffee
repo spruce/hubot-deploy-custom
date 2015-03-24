@@ -28,6 +28,8 @@ querystring = require 'querystring'
 options = properties.parse fs.readFileSync(__dirname + "/../deploy.conf", { encoding: "utf8" }), {sections: true, comments: ";", separators: "", strict: true}
 {spawn, exec}  = require 'child_process'
 
+
+
 module.exports = (robot) ->
   gitlabChannel = process.env.HUBOT_DEPLOY_CUSTOM_CHANNEL or "#gitlab"
 
@@ -42,14 +44,16 @@ module.exports = (robot) ->
     # search options for deployhook name == hook.repository.name
     for key, value of options when value.deployhook is hook.repository.name
       # execute real sh script
-      exec __dirname + "/../bin/deploy -c " + __dirname + "/../deploy.conf " + key, (err, stdout, stderr) ->
-        message = "Deployed #{key} from webhook. (#{value.deployhook})\r\n" + stdout
-        if not stdout?
-          message +=  "\r\n" + "Error: no stdout something went wrong"
-        if err
-          message +=  "\r\n" + "Error: " + err
-          if stderr
-            message +=  "\r\n" + "stderr:  " + stderr
-        # write into chat that repo got deployed by webhook
-        robot.send user, message
+      executeShell = (key, value) -> 
+        exec __dirname + "/../bin/deploy -c " + __dirname + "/../deploy.conf " + key, (err, stdout, stderr) ->
+          message = "Deployed #{key} from webhook. (#{value.deployhook})\r\n" + stdout
+          if not stdout?
+            message +=  "\r\n" + "Error: no stdout something went wrong"
+          if err
+            message +=  "\r\n" + "Error: " + err
+            if stderr
+              message +=  "\r\n" + "stderr:  " + stderr
+          # write into chat that repo got deployed by webhook
+          robot.send user, message
+      executeShell(key, value)
     res.end ""
